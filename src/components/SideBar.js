@@ -15,15 +15,6 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
       width: drawerWidth,
-      background: '#6441A4',
-      [theme.breakpoints.down('sm')]: {
-        display: 'none',
-        transition: '1s'
-      },
-      [theme.breakpoints.down('md')]: {
-        width: 300,
-        transition: '1s'
-      },
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
@@ -32,14 +23,14 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.main,
       padding: theme.spacing(3),
     },
-}));
+  }));
 
 
 export default function SideBar(props) {
 
     const classes = useStyles();
     return(
-        <div >
+        <div className={classes.root}>
         <CssBaseline />
         
         <Drawer
