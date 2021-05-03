@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-const drawerWidth = 420;
+const drawerWidth = 325;
 
 
 
@@ -17,9 +17,13 @@ const useStyles = makeStyles((theme) => ({
    
     },
     drawerPaper: {
+      background: '#6441A4',
       width: drawerWidth,
-      background: '#6441A4'
+    [theme.breakpoints.down('sm')]: {
+      position: 'relative',
+    }
     },
+
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     content: {
@@ -27,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.background.main,
       padding: theme.spacing(3),
     },
-  }));
+}));
 
 
 export default function SideBar(props) {
