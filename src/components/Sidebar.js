@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+// import Box from '@material-ui/core/Box';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
@@ -15,6 +16,7 @@ const drawerWidth = 420;
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
+      flexDirection: 'column'
     },
     drawer: {
       width: drawerWidth,
@@ -38,9 +40,11 @@ const useStyles = makeStyles((theme) => ({
     wrapper: {
       
       display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexWrap: 'wrap'
+      flexDirection: 'column',
+      alignItems: 'center'
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // flexWrap: 'wrap'
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
@@ -71,13 +75,16 @@ export default function SideBar(props) {
         }}
         anchor="left"
       >
-        <div clasName={classes.wrapper}>
-          <h1>Categories</h1>
-          <Divider />
+        <h1 id="categories">Categories</h1>
+        <div className={classes.wrapper}>
+          
+          <Divider light />
           <Button className={classes.button} variant="contained" size='large' startIcon={<GamesIcon />}>Games</Button>
           <Button className={classes.button} variant="contained" size='large' startIcon={<SettingsVoiceIcon />}>IRL</Button>
           <Button className={classes.button} variant="contained" size='large' startIcon={<MusicNoteIcon />}>Music</Button>
           <Button className={classes.button} variant="contained" size='large' startIcon={<SportsEsportsIcon />}>Esports</Button>
+         
+          
         </div>
 
       </Drawer>
