@@ -1,6 +1,8 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-// import Box from '@material-ui/core/Box';
+import React, { useState, useEffect } from 'react';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import Toolbar from '@material-ui/core/Toolbar';
+import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
@@ -22,9 +24,16 @@ const useStyles = makeStyles((theme) => ({
       width: drawerWidth,
       flexShrink: 0,
     },
+    menuButton: {
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.up('sm')]: {
+        display: 'none',
+      },
+    },
     drawerPaper: {
       width: drawerWidth,
       background: '#6441A4',
+      overflowY: 'scroll',
       [theme.breakpoints.down('sm')]: {
         display: 'none',
         transition: '1s'
@@ -54,17 +63,21 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(3),
     },
     button: {
-      margin: 10
+      margin: 20
 
     }
 }));
 
 
+
+
+
 export default function SideBar(props) {
+
 
     const classes = useStyles();
     return(
-        <div >
+        <>
         <CssBaseline />
         
         <Drawer
@@ -88,7 +101,7 @@ export default function SideBar(props) {
         </div>
 
       </Drawer>
-      </div>
+      </>
         
 
     )
