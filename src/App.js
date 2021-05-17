@@ -1,10 +1,19 @@
 import './App.css';
 import SideBar from './components/SideBar'
+import StreamAndChat from './components/StreamAndChat'
 
 function App() {
   return (
     <div>
       <SideBar/>
+      <main>
+        <div className='stream'>
+            <StreamAndChat />
+        </div>
+        <aside className='chat'>
+
+        </aside>
+      </main>
     </div>
   );
 }
