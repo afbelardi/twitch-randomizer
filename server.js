@@ -1,5 +1,6 @@
 require('dotenv').config()
 const request = require('request')
+const secrets = require('./src/config')
 
 const getToken = (url, callback) => {
 
@@ -24,6 +25,12 @@ const getToken = (url, callback) => {
     })
 }
 
+
 getToken(process.env.GET_TOKEN, (res) => {
-    console.log(res.body);
+    secrets.AT = res.body.access_token
+    console.log(secrets.AT)
 })
+
+
+
+
