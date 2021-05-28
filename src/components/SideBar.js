@@ -12,7 +12,7 @@ import Slider from './Slider'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 
-const drawerWidth = 420;
+const drawerWidth = 380;
 const mobileDrawerWidth = 240;
 
 
@@ -47,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
     categories: {
-        fontWeight: '500',
+        fontWeight: '400',
+        fontSize: '50px',
         color: '#F2F3F4',
         marginLeft: '3%',
         marginBottom: '3%',
@@ -69,7 +70,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   divider: {
-      background: '#F2F3F4'
+      background: '#F2F3F4',
+      width: '230px'
   },
   followerDivider: {
     background: '#F2F3F4',
@@ -100,7 +102,6 @@ export default function ResponsiveDrawer(props) {
       <Typography variant='h2' className={classes.categories}>Categories</Typography>
       <Divider className={classes.divider} variant='middle'/>
       <Checkboxes />
-      <Divider className={classes.followerDivider} variant='middle'/>
       <Typography variant='h3' className={classes.follower}>Follower Amount</Typography>
       <Divider className={classes.bottomFollowerDivider} variant='middle'/>
       <Slider className={classes.sidebar}/>
@@ -157,10 +158,4 @@ export default function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+

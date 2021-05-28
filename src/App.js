@@ -4,7 +4,6 @@ import SideBar from './components/SideBar'
 import StreamAndChat from './components/StreamAndChat'
 
 function App() {
-  const classes = useStyles();
   return (
     <div>
       <SideBar/>
