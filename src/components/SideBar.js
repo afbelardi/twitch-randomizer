@@ -59,7 +59,8 @@ const useStyles = makeStyles((theme) => ({
         
   },
   follower: {
-    fontWeight: '500',
+    fontWeight: '400',
+    fontSize: '50px',
     color: '#F2F3F4',
     marginLeft: '3%',
     marginTop: '15%',
@@ -71,11 +72,16 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
       background: '#F2F3F4',
-      width: '230px'
+      width: '230px',
+      marginTop: '-10px',
+      [theme.breakpoints.down('sm')]:{
+        width: '160px'
+      }
   },
   followerDivider: {
     background: '#F2F3F4',
-    marginTop: '15%',
+    marginTop: '2px',
+    width: 'px'
     
   },
   bottomFollowerDivider: {
@@ -103,7 +109,7 @@ export default function ResponsiveDrawer(props) {
       <Divider className={classes.divider} variant='middle'/>
       <Checkboxes />
       <Typography variant='h3' className={classes.follower}>Follower Amount</Typography>
-      <Divider className={classes.bottomFollowerDivider} variant='middle'/>
+      <Divider className={classes.followerDivider} variant='middle'/>
       <Slider className={classes.sidebar}/>
     </div>
   );
