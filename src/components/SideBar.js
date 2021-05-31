@@ -7,14 +7,12 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
-import Checkbox from '@material-ui/core/Checkbox'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
+import Checkboxes from './CheckBoxes'
+import Slider from './Slider'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 
-const drawerWidth = 420;
+const drawerWidth = 380;
 const mobileDrawerWidth = 240;
 
 
@@ -49,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
     categories: {
-        fontWeight: '500',
+        fontWeight: '400',
+        fontSize: '50px',
         color: '#F2F3F4',
         marginLeft: '3%',
         marginBottom: '3%',
@@ -59,9 +58,37 @@ const useStyles = makeStyles((theme) => ({
         },
         
   },
+  follower: {
+    fontWeight: '400',
+    fontSize: '50px',
+    color: '#F2F3F4',
+    marginLeft: '3%',
+    marginTop: '15%',
+    marginBottom: '3%',
+    [theme.breakpoints.down('sm')]:{
+        fontSize: '35px',
+        marginLeft: '5.5%'
+    }
+  },
   divider: {
-      background: '#F2F3F4'
+      background: '#F2F3F4',
+      width: '230px',
+      marginTop: '-10px',
+      [theme.breakpoints.down('sm')]:{
+        width: '160px'
+      }
+  },
+  followerDivider: {
+    background: '#F2F3F4',
+    marginTop: '2px',
+    width: 'px'
+    
+  },
+  bottomFollowerDivider: {
+    background: '#F2F3F4',
+      marginBottom: '25%'
   }
+
 }));
 
 export default function ResponsiveDrawer(props) {
@@ -80,9 +107,10 @@ export default function ResponsiveDrawer(props) {
       <div className={classes.toolbar} />
       <Typography variant='h2' className={classes.categories}>Categories</Typography>
       <Divider className={classes.divider} variant='middle'/>
-      <List>
-
-      </List>
+      <Checkboxes />
+      <Typography variant='h3' className={classes.follower}>Follower Amount</Typography>
+      <Divider className={classes.followerDivider} variant='middle'/>
+      <Slider className={classes.sidebar}/>
     </div>
   );
 
@@ -136,10 +164,4 @@ export default function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+
