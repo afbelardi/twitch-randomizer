@@ -7,12 +7,12 @@ function App() {
     <div>
       <SideBar/>
       <main>
-        <div className='stream'>
-            <StreamAndChat />
-        </div>
         <aside className='chat'>
 
         </aside>
+        <div className='stream'>
+            <StreamAndChat />
+        </div>
       </main>
     </div>
   );

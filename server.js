@@ -28,7 +28,8 @@ const getToken = (url, callback) => {
 
 getToken(process.env.GET_TOKEN, (res) => {
     secrets.AT = res.body.access_token
-    console.log(secrets.AT)
+    secrets.type = res.body.token_type
+    console.log(secrets)
 })
 
 

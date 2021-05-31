@@ -1,17 +1,25 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-const secrets = require('../config')
-
+const secrets = require ('../config')
 
 
 export default function StreamAndChat() {
 
-    const [toggleGenButton, setToggleGenButton] = useState(false)
+    // const [at, setAT ] = useState({})
 
     const handleCLick =  () => {
-        setToggleGenButton(!toggleGenButton)
-        console.log(secrets.AT)
+        console.log(secrets)
     }
+
+    // useEffect(() => {
+    //     (async () => {
+    //         try {
+    //             const response = await fetch
+    //         } catch (err) {
+    //             console.error(err)
+    //         }
+    //     })()
+    // })
 
 
     return(

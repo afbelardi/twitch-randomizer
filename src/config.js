@@ -1,5 +1,12 @@
 const secrets = {
-    AT: ''
+    AT: '',
+    type: ''
 }
 
 module.exports = secrets;
+
+
+
+
+
+
