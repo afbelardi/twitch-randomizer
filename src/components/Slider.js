@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
+import TheContext from '../context/index';
 
 
 export default function FollowerSlider(props) {
@@ -44,6 +45,11 @@ export default function FollowerSlider(props) {
         },
     })(Slider);
 
+    const context = useContext(TheContext)
+
+    const getValue = (value, index) => {
+        context.setViewerCount(value)
+    }
 
     return (
         <PrettoSlider valueLabelDisplay="auto" aria-label="custom thumb label" defaultValue={0}
@@ -51,7 +57,6 @@ export default function FollowerSlider(props) {
         max={5000}
         step={250}
         track='normal'
-        
         />
     )
 }

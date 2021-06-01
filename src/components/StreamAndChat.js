@@ -1,8 +1,7 @@
-import React from 'react'
-import TwitchEmbed from 'react-twitch-embed-video'
-import {useState, useEffect} from 'react'
-const secrets = require ('../config')
-
+import React from 'react';
+import TwitchEmbed from 'react-twitch-embed-video';
+import {useState, useEffect} from 'react';
+import secrets  from '../config';
 
 export default function StreamAndChat() {
     const [offset, setOffset] = useState(50)
@@ -16,7 +15,7 @@ export default function StreamAndChat() {
                     method: 'GET',
                     headers: {
                         'Accept': 'application/vnd.twitchtv.v5+json',
-                        'Client-ID': 'x3cy1tof7ldwet2y5jbk68xwqy5cpg'
+                        'Client-ID': secrets.client_id
                     }
                 })
                 const data = await response.json()

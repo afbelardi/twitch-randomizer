@@ -1,10 +1,8 @@
 const secrets = {
-    AT: '',
-    type: ''
+    client_id: 'x3cy1tof7ldwet2y5jbk68xwqy5cpg'
 }
 
-module.exports = secrets;
-
+export default secrets;
 
 
 
