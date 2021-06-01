@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <SideBar/>
-      <main>
+      <main className='main-body'>
         <aside className='chat'>
 
         </aside>
