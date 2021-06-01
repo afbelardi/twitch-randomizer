@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import Checkboxes from './CheckBoxes'
 import Slider from './Slider'
+import RandomButton from './RandomButton'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 
@@ -42,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     },
     background: '#6441A4'
   },
+
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -62,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '400',
     fontSize: '50px',
     color: '#F2F3F4',
-    marginLeft: '3%',
+    marginLeft: '4%',
     marginTop: '15%',
     marginBottom: '3%',
     [theme.breakpoints.down('sm')]:{
@@ -81,14 +83,14 @@ const useStyles = makeStyles((theme) => ({
   followerDivider: {
     background: '#F2F3F4',
     marginTop: '2px',
-    width: 'px'
+    width: '330px',
+    marginLeft: '20px',
+    [theme.breakpoints.down('sm')]:{
+      width: '125px',
+      marginLeft: '15px'
+    }
     
-  },
-  bottomFollowerDivider: {
-    background: '#F2F3F4',
-      marginBottom: '25%'
   }
-
 }));
 
 export default function ResponsiveDrawer(props) {
@@ -108,9 +110,10 @@ export default function ResponsiveDrawer(props) {
       <Typography variant='h2' className={classes.categories}>Categories</Typography>
       <Divider className={classes.divider} variant='middle'/>
       <Checkboxes />
-      <Typography variant='h3' className={classes.follower}>Follower Amount</Typography>
+      <Typography variant='h3' className={classes.follower}>Viewer Amount</Typography>
       <Divider className={classes.followerDivider} variant='middle'/>
-      <Slider className={classes.sidebar}/>
+      <Slider/>
+      <RandomButton />
     </div>
   );
 
