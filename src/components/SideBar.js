@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Checkboxes from './CheckBoxes'
 import Slider from './Slider'
 import RandomButton from './RandomButton'
+import { TextField } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 
@@ -107,13 +108,16 @@ export default function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-      <Typography variant='h2' className={classes.categories}>Categories</Typography>
+      <Typography variant='h2' className={classes.categories}>Game Pick</Typography>
       <Divider className={classes.divider} variant='middle'/>
-      <Checkboxes />
+      {/* <Checkboxes /> */}
+      <TextField onChange={(event) => {
+        props.gameInput.setGameInput(event.target.value)
+      }}/>
       <Typography variant='h3' className={classes.follower}>Viewer Amount</Typography>
       <Divider className={classes.followerDivider} variant='middle'/>
-      <Slider/>
-      <RandomButton />
+      <Slider />
+      <RandomButton clickFn={props.clickFn}/>
     </div>
   );
 

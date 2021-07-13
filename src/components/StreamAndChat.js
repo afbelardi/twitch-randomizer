@@ -1,37 +1,32 @@
 import React from 'react';
 import TwitchEmbed from 'react-twitch-embed-video';
 import {useState, useEffect} from 'react';
-import secrets  from '../config';
+// import secrets  from '../config';
+import axios from 'axios'
 
-export default function StreamAndChat() {
-    const [offset, setOffset] = useState(50)
-    const [data, setData] = useState({})
-    const [mature, setMature] = useState(false)
+export default function StreamAndChat({ data }) {
+    // const [offset, setOffset] = useState(50)
+    // const [mature, setMature] = useState(false)
+    const [display, setDisplay] = useState(false)
 
     useEffect(() => {
-        (async () => {
-            try {
-                const response = await fetch(`https://api.twitch.tv/kraken/streams/?limit=100&language=en&offset=${offset}`, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/vnd.twitchtv.v5+json',
-                        'Client-ID': secrets.client_id
-                    }
-                })
-                const data = await response.json()
-                setData(data)
-            } catch (err) {
-                console.error(err)
-            }
-        })()
-    }, [])
+        if(data) {
+            setDisplay(true)
+        } else {
+            setDisplay(false)
+        }
+    }, [data])
+    
 
 
     return(
         <>
-           <TwitchEmbed channel='adinross' width='1080' height='970' />
+            {
+                display ?
+                    <TwitchEmbed channel={data.stream.user_name} width='1080' height='970' />
+                :
+                    ""
+            } 
         </>
-
-
     )
 } 

@@ -1,15 +1,14 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-const secrets = require('../config')
 
 
-export default function RandomButton() {
+export default function RandomButton(props) {
 
     const [toggleGenButton, setToggleGenButton] = useState(false)
 
     const handleCLick =  () => {
         setToggleGenButton(!toggleGenButton)
-        console.log(secrets.AT)
+        props.clickFn()
     }
 
 

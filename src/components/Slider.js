@@ -52,7 +52,7 @@ export default function FollowerSlider(props) {
     }
 
     return (
-        <PrettoSlider valueLabelDisplay="auto" aria-label="custom thumb label" defaultValue={0}
+        <PrettoSlider valueLabelDisplay="auto" aria-label="custom thumb label" defaultValue={500}
         min={0}
         max={5000}
         step={250}
